@@ -1,0 +1,445 @@
+<ion-header>
+  <ion-toolbar color="secondary" class="ion-text-center">
+    <ion-title color="light">TEST DE AUTOCUIDADO</ion-title>
+    <ion-buttons slot="end" (click)="closeModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card class="ion-text-center cards" *ngIf="netService.isInvited === true">
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <h2>Debes registrarte para acceder a las dinámicas interactivas de la aplicación</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button (click)="registrarme()" expand="in-block" fill="clear" shape="round">
+              Ir al registro
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="netService.isInvited === false">
+    <ion-card class="ion-text-center cards" *ngIf="step === 1">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Realizas actividad física?</h2>
+              <h2>(Correr, trotar, algún tipo de ejercicio)</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 2">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿En el día realizas un acto de amor hacia ti y/o te das regalos?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 3">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Tomas tus alimentos en horas adecuadas?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 4">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress "></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Duermes mínimo 6 horas diarias seguidas?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 5">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Hablas y ríes con las amigas o familia?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 6">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Cuidas tu aseo personal?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 7">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Te realizas exámenes médicos periódicos?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 8">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Practicas técnicas de relajación?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 9">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Tienes relaciones sexuales placenteras y seguras?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 10">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Tienes relaciones laborales agradables?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card class="ion-text-center cards" *ngIf="step === 11">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="12">
+              <ion-progress-bar [value]="progress"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <h2>¿Tienes relaciones afectivas sanas?</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarSi()">
+                SI
+              </ion-button>
+            </ion-col>
+            <ion-col size="6">
+              <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarNo()">
+                NO
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngIf="step === 12" class="ion-text-center cards">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="6" class="ion-padding">
+            <ion-title class="titulo" color="success">TOTAL SI</ion-title>
+            <ion-chip color="success" mode="ios" outline="true">
+              <ion-label>{{si}}</ion-label>
+            </ion-chip>
+          </ion-col>
+          <ion-col size="6" class="ion-padding">
+            <ion-title class="titulo" color="danger">TOTAL NO</ion-title>
+            <ion-chip color="danger" mode="ios" outline="true">
+              <ion-label>{{no}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+        
+        <ion-row *ngIf="res === 1" class="ion-text-center ion-padding">
+          <ion-col size="12">
+            <img src="assets/peligro.png" alt="Peligro" class="img">
+            <p>Peligro: Estás en un nivel de baja
+              conciencia de autocuidado, por
+              tanto, estas en riesgo de desencadenar algún evento estresante; recuerda que la falta de descanso, la
+              ausencia de actividad física, la
+              alimentación inadecuada, las relaciones conflictivas, entre otras, son
+              la principal causa de enfermedades.
+              Por ello te invitamos a mejorar esta
+              situación siguiendo las pautas de
+              autocuidado que te proponemos en
+              esta guía.</p>
+              <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+                Guardar resultado
+              </ion-button>
+              <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+              
+          </ion-col>
+        </ion-row>
+  
+        <ion-row *ngIf="res === 2" class="ion-text-center ion-padding">
+          <ion-col size="12">
+            <img src="assets/Defensora2.png" alt="Peligro" class="img">
+            <p>Atención: Tu nivel de cuidado es
+              aceptable, realizar más actividades
+              que te ayuden a estar bien contigo
+              misma, es de contribución, no
+              siempre estás consiente de tus
+              propias necesidades y por esta
+              razón puedes tener dificultades a
+              nivel de relaciones con las demás o
+              cansada por no permitirte espacios
+              de relajación y recreación. En este
+              manual te proponemos algunas
+              técnicas</p>
+              <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+                Guardar resultado
+              </ion-button>
+              <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+  
+          </ion-col>
+        </ion-row>
+  
+        <ion-row *ngIf="res === 3" class="ion-text-center ion-padding">
+          <ion-col size="4">
+            <img src="assets/Defensora 03.png" alt="">
+          </ion-col>
+          <ion-col size="4">
+            <img src="assets/Defensora 07.png" alt="">
+          </ion-col>
+          <ion-col size="4">
+            <img src="assets/Defensora 04.png" alt="">
+          </ion-col>
+          <ion-col size="12">
+            <p>Felicitaciones: eres una persona
+              consiente que se cuida así misma,
+              sin esperar a que otras lo hagan por
+              ti, reconoces la importancia del
+              descanso, de disfrutar de las relaciones familiares e interpersonales,
+              sabes que tu salud física y mental
+              son tu responsabilidad y por tanto
+              tratas de mantener hábitos de vida
+              saludable</p>
+              <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+                Guardar resultado
+              </ion-button>
+              <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+  <img src="assets/Defensora 01.png" alt="" *ngIf="step !=12">
+</ion-content>

@@ -1,0 +1,188 @@
+<app-header titulo="Botiquín de autocuidado"></app-header>
+
+<ion-content>
+    <ion-grid fixed>
+        <ion-row>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="../../../assets/Defensora 06.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Una colección de las canciones que nos han acompañado en las sesiones de autocuidado 
+                                                                    y cuidado colectivos así como una recopilación de temas por parte de las defensoras, 
+                                                                    para ser compartidas. ¡A disfrutar!
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a 
+                            *ngIf="netService.isConnected"
+                            href="https://open.spotify.com/playlist/4GOH937H2l5cSJ86g2sIdS?si=6LIcC63KRpOX5rzl3PTbHw&nd=1" 
+                            target="_blank" 
+                            rel="noopener noreferrer">
+                            PLAYLIST "El mundo que soñamos" GESMujer
+                        </a>
+                        <a 
+                            *ngIf="!netService.isConnected"
+                            rel="noopener noreferrer">
+                            PLAYLIST "El mundo que soñamos" GESMujer
+                        </a>
+                        <p *ngIf="netService.isConnected">*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="">
+                        <ion-card-subtitle>Una de las herramientas para guiarnos por el camino de la tranquilidad y el soltar las cargas diarias, escuchalo y déjate llevar.</ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <ion-button (click)="playAudio()" expand="block" fill="clear" shape="round">
+                            <ion-icon slot="start" [name]="audioReproduciendose ? 'pause' : 'play'" class="cardsContent"></ion-icon>
+                        </ion-button>
+                        <a >MEDITACIÓN GUIADA</a>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card (click)="abrirEnganche()">
+                    <ion-card-header>
+                        <img src="../../../assets/Enganche-Cook.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Lo importante de este ejercicio es que causa un efecto integrador
+                                                                    en el cerebro y ayuda a activar la corteza sensorial y motora de
+                                                                    ambos hemisferios cerebrales.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a>ENGANCHE DE COOK</a>
+                        <p>Haz click en la imagen para ver el paso a paso</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card (click)="abrirMapa()">
+                    <ion-card-header>
+                        <img src="../../../assets/mapa.gif" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Uno de los instrumentos que nos han ayudado a saber que parte de 
+                                                                    nuestro cuerpo tiene dolencias y cuales son nuestras fortalezas, 
+                                                                    te la recomendamos para hacer una evaluación gráfica del dolor del 
+                                                                    cuerpo.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a>MAPA CORPORAL</a>
+                        <p>Haz click en la imagen para ver el paso a paso</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card (click)="abrirRespiracion()">
+                    <ion-card-header>
+                        <img src="../../../assets/INHALA.gif" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Un ejercicio que te ayudará a mejorar tu respiración y reducir el estrés, te lo recomendamos.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a rel="noopener noreferrer">RESPIRACIÓN PARA REDUCIR EL ESTRÉS</a>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="../../../assets/Libertad.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Te compartimos una técnica para la relajación, para que nos ayude a liberar el estrés acumulado.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a
+                        *ngIf="netService.isConnected"
+                        href="https://www.youtube.com/watch?v=qwIMOu3rr5w&t=11s&ab_channel=GESMujerRosarioCastellanos" 
+                        target="_blank" 
+                        rel="noopener noreferrer">EJERCICIOS DE RELAJACIÓN
+                        </a>
+                        <a
+                        *ngIf="!netService.isConnected"
+                        rel="noopener noreferrer">EJERCICIOS DE RELAJACIÓN
+                        </a>
+                        <p>*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="../../../assets/Libertad.png" alt="" >
+                        <ion-card-subtitle class="ion-text-justify">Te compartimos un formato que ayudará a gestionar y organizar la agenda colectiva de autocuidado y cuidado colectivo.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a 
+                        *ngIf="netService.isConnected"
+                        href="https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fwww.gesmujer.org%2Fsitio%2Fwp-content%2Fuploads%2F2023%2F07%2F07.-Dercarga-Formato-de-Agenda.docx&wdOrigin=BROWSELINK" 
+                        target="_blank" 
+                        rel="noopener noreferrer">FORMATO PARA AGENDA</a>
+                        <a 
+                        *ngIf="!netService.isConnected"
+                        rel="noopener noreferrer">FORMATO PARA AGENDA</a>
+                        <p>*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="../../../assets/Extra icono2.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Un plan de autocuidado y cuidado colectivo es de mucha ayuda, porque ahí iremos colocando lo que nos interesa atender de las claves de autocuidado y cuidado colectivo, así que descarga y manos a la obra.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a 
+                        *ngIf="netService.isConnected"
+                        href="https://www.gesmujer.org/sitio/wp-content/uploads/2023/07/08.-Plan-de-Autocuidado-Individual.pdf" 
+                        target="_blank" 
+                        rel="noopener noreferrer">PLAN DE AUTOCUIDADO</a>
+                        <a 
+                        *ngIf="!netService.isConnected"
+                        rel="noopener noreferrer">PLAN DE AUTOCUIDADO</a>
+                        <p>*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card >
+                    <ion-card-header>
+                        <img src="../../../assets/LazosCorazónVioleta.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Descarga Formato de Políticas Institucionales de Autocuidado.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a 
+                        href="https://www.gesmujer.org/sitio/wp-content/uploads/2023/07/11.-Formato-Politicas-Institucionales-de-Autocuidado.docx" 
+                        target="_blank" 
+                        rel="noopener noreferrer">POLÍTICAS DE AUTOCUIDADO</a>
+                        <p>*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <img src="../../../assets/Tarjetas Bienestar 6.png" alt="">
+                        <ion-card-subtitle class="ion-text-justify">Para dar paso al plan de cuidado colectivo, es importante primero 
+                            realizar un diagnóstico con nuestra colectiva, equipa u organización, con quienes laboramos y, 
+                            poder encontrar los niveles de riesgo, diseñar estrategias y herramientas que permitan disminuir el impacto 
+                            y mantener procesos armónicos  de crecimiento dentro de nuestros espacios y colectivas. Descarga el Formato.
+                        </ion-card-subtitle>
+                    </ion-card-header>
+                    <ion-card-content class="ion-text-center">
+                        <a 
+                        href="https://www.gesmujer.org/sitio/wp-content/uploads/2023/08/PLAN-DE-AUTOCUIDADO-COLECTIVO-GESMUJER-POLITICAS.docx" 
+                        target="_blank" 
+                        rel="noopener noreferrer">PLAN DE AUTOCUIDADO COLECTIVO</a>
+                        <p>*Necesitas conexión a internet</p>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

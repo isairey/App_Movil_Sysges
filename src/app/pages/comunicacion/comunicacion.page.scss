@@ -1,0 +1,96 @@
+.notification {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #85629b;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #d599da, #d599da, #d599da);
+    --color: #ffffff;
+  }     
+  .notification:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #9e74a4;
+    z-index: 2;
+  }
+  .notification:hover:after {
+    transform: translateX(0.15rem);
+  }
+  .notititle {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+  }
+
+
+  .card {
+    width: 100%;
+    height: 500px;
+    padding: 2%;
+    background: rgb(255, 255, 255);
+    border-bottom: 2px solid blueviolet;
+    border-right: 2px solid blueviolet;
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    transition-duration: 1s;
+    transition-property: border-top, 
+       border-left, 
+       border-bottom,
+       border-right,
+       box-shadow;
+   }
+   
+   .card:hover {
+    border-top: 2px solid blueviolet;
+    border-left: 2px solid blueviolet;
+    border-bottom: 2px solid rgb(238, 103, 238);
+    border-right: 2px solid rgb(238, 103, 238);
+    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+   }
+   
+   .card__content {
+    font-size: small;
+    text-align: center;
+   }
+   
+   .card__content-heading {
+    color: blueviolet;
+   }
+   
+   .card__content-body p {
+    color: rgb(118, 104, 128);
+    padding-bottom: 1rem;
+   }
+   
+   .card__content-footer button {
+    background-color: rgb(255, 255, 255);
+    color: grey;
+    font-weight: 700;
+    border-radius: .2rem;
+    border: 1px solid grey;
+    padding: .5rem;
+    margin: 1rem;
+    transition-duration: 1s;
+    transition-property: background-color, color, border;
+   }
+   
+   button:hover {
+    color: white;
+    background-color: rgb(238, 103, 238);
+    border: 1px solid white;
+    box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+   }
+   
+   
+   

@@ -1,0 +1,27 @@
+.imagen{
+    width: 200px !important;
+    height: 200px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;  
+    overflow: hidden;
+    margin: 0 auto;  
+}
+
+.imagen img{
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 50% !important;
+    border: solid 1px !important;
+    object-fit: cover;
+}
+
+// *{
+//     justify-content: center !important;
+//     align-items: center !important;  
+// }
+
+.titulos{
+    font-size: 22px !important;
+    color: gray;
+}

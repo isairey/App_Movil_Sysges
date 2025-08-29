@@ -1,0 +1,57 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" color="light">Introducción a las claves de autocuidado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <h2><strong>TERCERA SECCIÓN: CLAVES DEL AUTOCUIDADO</strong></h2>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-text-justify">
+      <ion-col size="12">
+        <p>El autocuidado es un proceso inacabado, estamos aprendiendo de nosotras mismas.
+          Las mejores inversiones están en nuestra alimentación, salud, educación y paz mental,
+          esos actos que nadie más puede hacer por nosotras, elijamos actuar ahora.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="imgContainer">
+      <ion-col size="6" class="ion-align-items-center">
+        <img src="../../../assets/Defensora 01.png" alt="">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-text-justify">
+      <ion-col size="12">
+        <p>Te invitamos a leer todo lo relacionado a las cuatro claves para ayudar a mejorar tu salud tanto física como emocional, 
+          así como a ver los recursos adicionales relacionado con el tema
+          <a (click)="abrirRecursos()"> Ver recursos</a>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="imgContainer">
+      <ion-col size="6" class="ion-align-items-center">
+        <img src="../../../assets/FloresCorazónVioleta.png" alt="">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="custom-button" (click)="closeModal()" expand="block" fill="clear" shape="round">
+          <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+          Acceder a las claves
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+
+<img src="../../../assets/Defensora 06.png" alt="">

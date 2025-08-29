@@ -1,0 +1,36 @@
+<app-header titulo="Autocuidado colectivo"></app-header>
+
+<ion-content class="ion-text-justify ion-padding">
+    <h1>AUTODIAGNÓSTICO</h1>
+    <h3>Reconociendo mi autocuidado</h3>
+    <img src="../../../assets/Defensora 09.png" alt="">
+    <ion-button expand="block" fill="outline" shape="round" color="secondary" (click)="abrirTest()">
+        Empezar test
+    </ion-button>
+    <br>
+    <ion-card class="cards" *ngIf="netService.isConnected">
+        <ion-card-content>
+            <ion-grid fixed>
+                <ion-row class="ion-text-center">
+                    <ion-col size="6" class="ion-padding">
+                        <ion-title class="titulo" color="success">TOTAL SI</ion-title>
+                        <ion-chip color="success" mode="ios" outline="true">
+                          <ion-label>{{respuestas.si}}</ion-label>
+                        </ion-chip>
+                      </ion-col>
+                      <ion-col size="6" class="ion-padding">
+                        <ion-title class="titulo" color="danger">TOTAL NO</ion-title>
+                        <ion-chip color="danger" mode="ios" outline="true">
+                          <ion-label>{{respuestas.no}}</ion-label>
+                        </ion-chip>
+                      </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+    <ion-card class="cards" *ngIf="!netService.isConnected">
+      <ion-card-content>
+          <h1>NECESITAS CONEXIÓN A INTERNET PARA ACCEDER A LOS RESULTADOS DEL TEST</h1>
+      </ion-card-content>
+  </ion-card>
+</ion-content>

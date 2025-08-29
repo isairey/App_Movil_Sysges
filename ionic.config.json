@@ -1,0 +1,7 @@
+{
+  "name": "AppGESMujer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

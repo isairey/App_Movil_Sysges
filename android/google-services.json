@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "615364191835",
+    "project_id": "app-gesmujer",
+    "storage_bucket": "app-gesmujer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:615364191835:android:78c42b36972792f7d7817e",
+        "android_client_info": {
+          "package_name": "io.ionic.AppGesMujer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQrLrzyCgSRkjaW9HY3Z12bPJu2Z7MF2Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,601 @@
+<app-header titulo="autocuidado"></app-header>
+
+<ion-content>
+  <ion-segment value="" scrollable="true" mode="md" (ionChange)="selectCategory($event)">
+    <ion-segment-button value="Fisico">
+      <ion-label>Físico</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Emocional">
+      <ion-label>Emocional y mental</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Laboral">
+      <ion-label>Laboral</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="Digital">
+      <ion-label>Digital</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <div *ngIf="seleccion === 'Fisico'" class="ion-text-center ion-padding">
+    <h1>AUTOCUIDADO FÍSICO</h1>
+    <p class="ion-text-justify ion-padding">Mantengo un cuerpo saludable: Cuido
+      mi salud física, sexual, reproductiva
+      y una nutrición adecuada. Para descansar elimino el estrés, duermo
+      libre de tensiones y realizo
+      rituales de sanación.</p>
+      <img src="../../../assets/Autocuidado Físico.png" style="max-width: 90%; max-height: 90%;" class="">
+
+      <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Lo que se sabe</h2><br>
+      <p>En esta clave resaltamos los siguientes puntos a tomar en cuenta en el cuidado de la salud física:</p>
+
+      <div>
+        <ion-row>
+          <ion-col size="12">
+            <swiper-container
+              class="swiperCard"
+              effect="coverflow"
+              [centeredSlides]="true"
+              [slidesPerView]="'auto'"
+              [coverflowEffect]="{rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true}">
+              <swiper-slide>
+                <ion-card class="card2">
+                    <ion-card-tittle class="name"><em>La activación física</em></ion-card-tittle>
+                    <ion-label class="ion-text-justify ion-padding">
+                        Constituye parte esencial para lograr bienestar general.
+                        La OMS define la actividad física como cualquier movimiento corporal producido por los músculos
+                        esqueléticos, incluye cualquier actividad diaria como trabajar, jugar, viajar y las actividades recreativas.
+                        </ion-label>
+                        <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                      </ion-card>
+            </swiper-slide>
+
+            <swiper-slide>
+              <ion-card class="card2">
+                  <ion-card-tittle class="name"><em>La salud sexual y reproductiva</em></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                      Es un estado general de estado físico, mental y social en todos los aspectos relacionados con el sitema reproctivo (UNFPA). Requiere un esfoque positivo y respetuoso de la secualidad y las relaciones sexuales, así como la responsabilidad de tener experiencias sexuales placenteras y seguras, libres de coacción, discriminación y violencia (OMS)
+                      </ion-label>
+              </ion-card>
+          </swiper-slide>
+
+            <swiper-slide>
+            <ion-card class="card2">
+                <ion-card-tittle class="name"><em>La nutrición saludable</em></ion-card-tittle>
+                <ion-label class="ion-text-justify ion-padding"> 
+                    Consiste en consumir los alimentos de manera consiente , sin prisa, en ambuente agradable, sin saltarse alguna comida principal, "alimentarnos es un acto politico y también es una forma de resitir frente al sistema. No es necesario que nos digan que tenemos que comer, sino aprender a consumir de forma responsable no sólo con el cuerpo, sino con todo lo que está a nuestro alrededor". (Luna Nueva,2020)
+                    </ion-label>
+            </ion-card>
+          </swiper-slide>
+
+            <swiper-slide>
+          <ion-card class="card2">
+              <ion-card-tittle class="name"><em>Un descanso y el sueño</em></ion-card-tittle>
+              <ion-label class="ion-text-justify ion-padding">
+                  Son esenciales para nuestra salud, se la falta de descanso y sueño es prolongada, origina un transtorno progresivo de la mente, un comportamiento anormal del sitema nervioso, dificultad para organizar los pensamientos, irritabilidad y psicosis. El descanso y sueño restauran el equilibrio natural entre los centros neuronales (Saludemia).
+                  </ion-label>
+          </ion-card>
+          </swiper-slide>
+
+            <swiper-slide>
+        <ion-card class="card2">
+            <ion-card-tittle class="name"><em>Los rituales de sanación</em></ion-card-tittle>
+            <ion-label class="ion-text-justify ion-padding">
+                Que son parte de la herbolaria, son una tradición médica muy antigua, basada en el uso de plantasy hierbas, las mujeres indígenas han sido protagonistas de esta práctica, que se ha constituido como un método altamente efectivo y practicado, la <strong>OMS</strong>, reconoce su efectividad al incluirla en esquemas públicos de salud.
+                </ion-label>
+        </ion-card>
+          </swiper-slide>
+            </swiper-container> <!-- Se cerró swiper-container aquí -->
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <div>
+        <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Caricia para el alma</h2>
+        <p class="morado2">Presiona la imagen y descubre el poema</p>
+        <div class="ion-text-center ion-padding">
+      <section id="card1" class="card">
+        <img src="../../../assets/CariciaParaElAlma.png" alt="">
+        <div class="card__content">
+          <p><strong>Cuida de ti misma</strong></p>
+          <p style="text-align: left;">
+            <em>            
+              Vuelve a ti misma, conecta contigo y cuida de ti misma.<br>
+              Tu cuerpo te necesita, tus sentimientos te necesitan, tus percepciones te necesitan.<br>
+              La niña herida que hay en ti te necesita.<br>
+              Tu sufrimiento necesita que lo reconozcas.<br>
+              Vuelve a ti y ocúpate de todo eso.<br>
+              Practica el caminar consciente y la respiración consciente.<br>
+              Hazlo todo con atención plena para poder estar realmente ahí, para ser capaz de amar.<br>
+            </em>
+          </p>
+          
+          <p class=" ion-text-justify">            
+            Autora: <strong> Thich Nhat Hanh.</strong><br>
+            <em>El arte de cuidar a tu niño interior.</em></p>
+        </div>
+      </section>
+    </div>
+      <br><br>
+      <p><strong>Te invitamos a descargar y leer manual donde se menciona más informacion útil.</strong></p><br>
+      <ion-button (click)="leermas()" style="--background: purple; --color: white;">
+        Leer más
+      </ion-button>
+              
+    </div>
+  </div>
+
+  <div *ngIf="seleccion === 'Emocional'" class="ion-text-center ion-padding">
+    <h1>AUTOCUIDADO EMOCIONAL Y MENTAL</h1>
+    <p class="ion-text-justify ion-padding">Conecto con mis emociones: Libero
+      mi voz y mi fuerza para sanarme,
+      expreso asertivamente lo que pienso, siento y quiero. Me permito ser
+      resiliente, a través de la risa, el
+      gozo, el placer sexual y erótico. En armonía busco
+      ayuda y me dejo ayudar.</p>
+      <img src="../../../assets/Emocional Mental.png" alt="" ><br><br>
+      <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Lo que se sabe</h2>
+      <div>
+        <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+        <p  class="ion-text-justify">
+          Segun la Organización Mundial de la Salud, <strong>"La salud es un estado de bienestar en el cual el individuo es consciente de sus propias capacidades, puede afrontar las tensiones normales de la vida, puede trabajar de forma productiva y fructífera, y es capaz de hacer una contribución a su comunidad".</strong></p> <br><br>
+          <img src="../../../assets/Extra icono2.png" alt="" style="max-width: 50%; max-height: 20%;" class="" > <br><br>
+          <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+          <p class="ion-text-justify">
+          El Instituto Mexicano del Seguro Social, nos dice que, la salud mental es importante porque puede afectar la salud fisica, por ejemplo, los transtornos mentales aumentan el riesgo de accidentes cerebrovasculares,diabetes tipo 2 y enfermedades cardiacas.
+        </p>
+      </div><br>
+      <div>    
+        <p><strong><em>El cuidado de la salud mental puede ayudar a: </em></strong></p><br>
+        <img src="../../../assets/Icono Estrés.png" alt="" style="max-width: 19%; max-height: 19%;"><br>
+        <div class="notification">
+          <div class="notiglow"></div>
+          <div class="notiborderglow"></div>
+          <div class="notititle">Enfrentar el estrés de la vida</div>
+        </div>
+      </div><br>
+      <div>
+        <img src="../../../assets/Icono Físico.png" alt="" style="max-width: 19%; max-height: 19%;">
+        <div class="notification">
+          <div class="notititle">Estar físicamente saludable</div>
+        </div>
+      </div><br>
+      <div>
+        <img src="../../../assets/Icono Relaciones Sanas.png" alt="" style="max-width: 19%; max-height: 19%;">
+        <div class="notification">
+          <div class="notiglow"></div>
+          <div class="notiborderglow"></div>
+          <div class="notititle">Tener relaciones sanas</div>
+        </div>
+            </div><br>
+      <div>
+        <img src="../../../assets/Icono comunidad.png" alt="" style="max-width: 19%; max-height: 19%;">
+        <div class="notification">
+          <div class="notiglow"></div>
+          <div class="notiborderglow"></div>
+          <div class="notititle">Contribuir en forma significativa a la comunidad</div>
+        </div>      </div><br>
+      <div>
+        <img src="../../../assets/Icono Trabajo Productivo.png" alt="" style="max-width: 19%; max-height: 19%;">
+        <div class="notification">
+          <div class="notiglow"></div>
+          <div class="notiborderglow"></div>
+          <div class="notititle">Trabajar productivamente</div>
+        </div>      </div><br>
+      <div>
+        <img src="../../../assets/Icono Completo Potencial.png" alt="" style="max-width: 19%; max-height: 19%;">
+        <div class="notification">
+          <div class="notiglow"></div>
+          <div class="notiborderglow"></div>
+          <div class="notititle">Alcanzar su completo potencial</div>
+        </div>      
+      </div>
+      <br>
+        <div>
+          <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Caricia para el alma</h2><br>
+          <p class="morado2">Presiona la imagen y descubre el poema</p>
+          <div class="ion-text-center ion-padding">
+        <section id="card1" class="card">
+          <img src="../../../assets/CariciaParaElAlma2.png" alt="">
+          <div class="card__content">
+            <p><strong>El cuerpo en quitud</strong></p>
+            <p style="text-align: left;">
+              <em>            
+                La respiración suave y serena.<br>
+                Soy mi refugio.<br>
+                El descanso circula dentro de mi.<br>
+                El descando me llena.<br>
+                Bebo del no hacer.<br>
+                Repongo energia.<br>
+                Me acuna el silencio.<br>
+                Me vuelve simple,<br>
+                más simple, más simple.<br>
+                Me saco esta capa,<br>
+                y esta,<br>
+                y esta otra.<br>
+                Acá estoy.<br>
+                Tomo refugio en mí.<br>
+                Soy presencia.<br>
+                Y es suficiente.<br>
+                <strong>Soy suficiente.</strong><br>
+              </em>
+            </p>
+            
+            <p class=" ion-text-justify">            
+              Autora: <strong> Guadalupe Seijo.</strong><br>
+              <em>Conectar con nuestro cuerpo: Regando Semillas.</em></p>
+          </div>
+        </section>
+      </div>
+        <br><br>
+        <p><strong>Te invitamos a descargar y leer manual donde se menciona más informacion útil.</strong></p><br>
+        <ion-button (click)="leermas()" style="--background: purple; --color: white;">
+          Leer más
+        </ion-button>
+                
+      </div>
+  </div>
+
+  <div *ngIf="seleccion === 'Laboral'" class="ion-text-center ion-padding">
+    <h1>AUTOCUIDADO LABORAL</h1>
+    <p class="ion-text-justify ion-padding">Equilibrio mi activismo, mi
+      vida personal y laboral: Participo
+      en redes basadas en la filosofía
+      feminista. Aplico el protocolo de
+      seguridad individual y colectiva al
+      realizar tareas de activismo público.
+      Pongo límite a agendas y horarios
+      laborales, respeto fines de semana,
+      vacaciones y días festivos. </p>
+      <img src="../../../assets/Colectivo Y Laboral.png" alt="">
+
+      <h2 class="fancy  hf" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">El camino del aprendizaje</h2><br>
+      <div>
+        <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+        <p  class="ion-text-justify">
+          <strong>Esta es una de las claves de autocuidado que al principio nos parece 
+            difícil porque hemos aprendido a entregar la vida a nuestro trabajo. </strong>
+            Es importante reconocer qué, aunque sepamos de la importancia de nuestra labor y la realicemos con un gran compromiso, si no descansamos lo suficiente, nos agotamos en extremo, nos enfermamos y al final nos vemos obligadas a parar.
+        </p> <br>
+          <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+          <p class="ion-text-justify">
+            <strong>Para que el autocuidado sea una realidad en las organizaciones, es fundamental 
+              establecer Políticas de Cuidado Colectivo, lo que implica poner en el centro la vida 
+              de las DDHH y mantener un equilibrio saludable entre la vida personal y la laboral.</strong>
+              Para ello podemos implementar actividades como las siguientes:
+          </p>
+          <div>
+            <img src="../../../assets/01.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Jornadas de trabajo con horarios justos (menores a 8 horas).</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/02.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Reuniones de trabajo tomando pausas activas para no estar demasiado tiempo sentados.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/03.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Tomarse un tiempo de la jornada de trabajo para bailar, meditar o 
+                estirarse ya sea sola o con el equipo, de ser posible en espacios con 
+                aire fresco, plantas y luz natural.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/04.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Sustituir los carbohidratos y azucares por frutas, verduras y/o semillas 
+                en los refrigerios para talleres o reuniones.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/05.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Propiciar la desconexión digital para temas laborales en un horario 
+                límite los días laborales y total en los días no laborales.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/06.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Agendar todas las actividades laborales durante días y horarios establecidos. En condiciones excepcionales donde se requiera asistir 
+                fuera del horario laboral, compensar el tiempo.
+                </div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/07.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Propiciar y facilitar el acceso a talleres y pláticas con temas relacionados al autocuidado y bienestar.
+              </div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/08.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Propiciar espacios de resolución de conflictos a través de actividades 
+                de encuentro grupal y en casos necesarios se puede solicitar una 
+                mediación externa.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/09.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Contar con un botiquín de cuidado colectivo (incluye aceites, esencias, 
+                tés, entre otras que le sirvan a tu organización).</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/10.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">ropiciar la seguridad digital a través de capacitaciones y de la práctica en la vida cotidiana de la organización.</div>
+            </div>
+          </div><br>
+          <div>
+            <img src="../../../assets/11.png" alt="" style="max-width: 19%; max-height: 19%;">
+            <div class="notification">
+              <div class="notititle">Crear un protocolo de monitoreo que incluya rutas y responsables para 
+                el seguimiento de las personas en movimiento (marchas, salidas a 
+                comunidad, etc)
+                </div>
+            </div>
+          </div><br>
+        </div><br>
+      <div>
+        <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Caricia para el alma</h2><br>
+        <p class="morado2">Presiona la imagen y descubre el poema</p>
+        <div class="ion-text-center ion-padding">
+      <section id="card1" class="card">
+        <img src="../../../assets/CariciaParaElAlma3.png" alt="">
+        <div class="card__content">
+          <p><strong>La belleza de la culpa</strong></p>
+          <p style="text-align: left;">
+            <em>            
+              Cuando dices NO,<br>
+              Cuando estableces limites,<br>
+              Puedes sentirte culpable.<br>
+              Maravilloso. ¡Siéntete culpable!<br>
+              Y di NO de todos modos,<br>
+              Establece límites de todos modos.<br>
+              Di tu verdad más profunda de<br>
+              todos modos.<br>
+              Sentirse culpable no es tan malo<br>
+              Cuando empapas esa experiencia<br>
+              Con curiosa conciencia.<br>
+              Sostén "al cumplable" en tus brazos.<br>
+              Dale tu habitación.<br>
+              Respira el malestar.<br>
+              Dejalo sentirse "mal" por un timepo.<br>
+              Y di tu verdad de todos modos.<br>
+              Di NO de todos modos<br>
+              Establece limites de todos modos.<br>
+              A veces dices SÍ para evitar el <br>
+              dolor de la culpa, ¿no?<br>
+              Ignoras tus propios límites para <br>
+              evitar el dolor.<br>
+              Pero el dolor es soportable.<br>
+              Puedes sobrevivirlo.<br>
+              La culpa se levantará como una ola, a veces.<br>
+              Y desaparece.<br>
+              Y se levanta de nuevo, tal vez.<br>
+              Y finalmente pasa.<br>
+              Pero te mantendrás fiel a ti misma <br>
+              independientemente.<br>
+              En tu camino, en tu integridad.<br>
+              La culpa como una dulce compañera.<br>
+              La culpa como una niña fragil que necesita tu amor.<br>
+              La culà como una aliada en el camino.<br>
+              Ya no estás controlada por la culpa,<br>
+              cuando estás dispuesta a sentirla.<br>
+            </em>
+          </p>
+          
+          <p class=" ion-text-justify">            
+            Autora: <strong> Jeff Foster</strong><br>
+            </p>
+        </div>
+      </section>
+    </div>
+      <br><br>
+      <p><strong>Te invitamos a descargar y leer manual donde se menciona más informacion útil.</strong></p><br>
+      <ion-button (click)="leermas()" style="--background: purple; --color: white;">
+        Leer más
+      </ion-button>
+              
+    </div>
+  </div>
+
+  <div *ngIf="seleccion === 'Digital'" class="ion-text-center ion-padding">
+    <h1>AUTOCUIDADO DIGITAL</h1>
+    <p class="ion-text-justify ion-padding">
+      Cuido mi seguridad digital: Hago uso estratégico de la tecnología, plataformas digitales, redes sociales, 
+      conozco mis derechos digitales y de qué manera la ley me protege. Promuevo la desconexión digital.
+    </p>
+    <img src="../../../assets/Digital.png" alt="" style="max-width: 80%; max-height: 80%;" class=""><br><br>
+  
+    <h2 class="fancy" style="--w: 50vw; --c: #8d078d; --b:4px; --g: 40px">Lo que se sabe</h2><br>
+    
+    <div>
+      <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+      <p class="ion-text-justify">
+        <strong>La violencia digital contra las mujeres se refiere a la violencia y el acoso en línea dirigidos a mujeres, 
+        y que tiene el potencial de afectar su seguridad, privacidad y bienestar psicológico.</strong> Puede manifestarse 
+        de diversas formas, desde el acoso y la intimidación en línea hasta la difusión no consensuada de imágenes íntimas 
+        o la exposición de información personal.
+      </p><br>
+      <ion-icon class="custom-icon2" name="megaphone-outline"></ion-icon>
+      <p class="ion-text-justify">
+        La violencia digital contra las mujeres puede tener graves consecuencias para su bienestar y seguridad, como la 
+        pérdida de empleo, la exclusión social, así como un impacto emocional profundo, incluyendo el estrés, la ansiedad 
+        y la depresión, entre otras manifestaciones.
+      </p><br>
+      <img src="../../../assets/Divisor.png" alt="" style="max-width: 80%; max-height: 80%;" class=""><br><br>
+      <ion-icon class="custom-icon2" name="female-outline"></ion-icon>
+      <p class="ion-text-justify">
+        <strong>Ley Olimpia es una ley mexicana </strong> que busca prevenir, sancionar y erradicar la violencia digital de género, 
+        en particular, la difusión no consensuada de contenido íntimo, también conocido como "porno venganza". 
+        Fue promulgada por primera vez en el estado de Puebla, México, en 2018, y posteriormente se ha adoptado en otros 
+        estados del país.
+      </p>
+    </div>
+    <p> <strong>A continuación, se presentan algunos tipos comunes de violencia digital de 
+      género</strong> </p><br>
+        <ion-row>
+          <ion-col size="12">
+            <swiper-container
+            class="swiperCard"
+            effect="coverflow"
+            [centeredSlides]="true"
+            [slidesPerView]="'auto'"
+            [coverflowEffect]="{rotate: 50, stretch: 0, depth: 100, modifier: 1, slideShadows: true}">
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Acoso en línea</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Consiste en enviar mensajes 
+                    ofensivos, amenazantes o 
+                    intimidatorios a través de 
+                    redes sociales, correo electrónico, aplicaciones de mensajería o cualquier otra forma de 
+                    comunicación en línea.
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Ciberstalking</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Consiste en el acoso y la 
+                    persecución en línea de una 
+                    persona, a menudo con el 
+                    objetivo de intimidar, asustar 
+                    o controlar a la víctima.   <br><br><br>                 
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Suplantación de identidad</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Consiste en crear perfiles falsos 
+                    en redes sociales u otras plataformas en línea, usando el nombre y las imágenes de una mujer 
+                    sin su consentimiento.<br>
+                    Esto puede ser utilizado para   
+                    acosar o difundir información 
+                    falsa o difamatoria.
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Difusión no consensuada de contenido íntimo</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Se refiere a la publicación o 
+                    distribución de imágenes o 
+                    videos íntimos sin el consentimiento de la persona afectada. También conocida como 
+                    "porno venganza", esta práctica puede tener graves consecuencias para la privacidad, 
+                    la reputación y la seguridad 
+                    de las mujeres.
+                    
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Discriminación en línea</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Se refiere a la discriminación y el 
+                    hostigamiento en línea basado 
+                    en la identidad de género de una 
+                    persona, su orientación sexual, 
+                    raza, religión u otras características personales.   <br><br><br>                  
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Violencia sexual en línea</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Incluye la realización de actividades sexuales explícitas o 
+                    inapropiadas a través de 
+                    internet, como enviar imágenes o mensajes sexuales no 
+                    solicitados.      <br><br><br>             
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+              <swiper-slide>
+                <ion-card class="card2">
+                  <ion-card-tittle class="name"><strong>Robo de información</strong></ion-card-tittle>
+                  <ion-label class="ion-text-justify ion-padding">
+                    Se da cuando se instala consciente o inconscientemente 
+                    software malicioso, tal como 
+                    spyware, fishing, u otros, que 
+                    extraen información de las 
+                    computadoras, capturando 
+                    contraseñas en formularios o 
+                    cuentas bancarias, así como 
+                    vigilancia de los movimientos 
+                    que se hacen desde nuestros 
+                    equipos.
+                      </ion-label>
+                      <ion-label class="p"><ion-icon slot="start" name="arrow-back" class="custom-icon"></ion-icon> Desliza para ver más</ion-label>
+                    </ion-card>
+              </swiper-slide>
+            </swiper-container>
+          </ion-col>
+        </ion-row>
+
+        <div>
+          <h2 class="fancy" style="--w: 50vw;--c: #8d078d;--b:4px;--g: 40px">Caricia para el alma</h2><br>
+          <p class="morado2">Presiona la imagen y descubre el poema</p>
+          <div class="ion-text-center ion-padding">
+        <section id="card1" class="card">
+          <img src="../../../assets/CariciaParaElAlma4.png" alt="">
+          <div class="card__content">
+            <p><strong>El poder de elegir.</strong></p>
+            <p style="text-align: left;">
+              <em>            
+                Yo estaba encerrada en una concha<br>
+                Creía que era incapaz de cambiar mi vida.<br>
+                Luego encontré la profunidad del mar,<br>
+                la belleza del cielo,<br>
+                la libertad de los págaros,<br>
+                la fuerza del viento,<br>
+                la ligereza de las nubes,<br>
+                la luz del sol,<br>
+                y he sentido que todo eso era yo.<br>
+                Yo era profunfa como el mar,<br>
+                bella como el cielo,<br>
+                libre como los pájaros,<br>
+                potente como el viente,<br>
+                ligera como las nubes,<br>
+                luminosa como el sol,<br>
+                y entonces he elegido volver<br>
+                a ser lo que era.<br>
+              </em>
+            </p>
+            
+            <p class=" ion-text-justify">            
+              Autora: <strong> Annie Marquier</strong><br>
+              </p>
+          </div>
+        </section>
+      </div>
+        <br><br>
+        <p><strong>Te invitamos a descargar y leer manual donde se menciona más informacion útil.</strong></p><br>
+        <ion-button (click)="leermas()" style="--background: purple; --color: white;">
+          Leer más
+        </ion-button>
+                
+      </div>
+
+  </div>
+
+</ion-content>

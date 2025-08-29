@@ -1,0 +1,171 @@
+ion-card {
+    .card-content {
+        display: flex;
+        flex-direction: column; /* Dirección vertical */
+        align-items: center;
+        text-align: center;
+        overflow-y: auto; /* Habilita el scroll vertical */
+        height: 400px; /* Establece la altura deseada */
+
+        .vocal-image {
+            width: 100%;
+            max-width: 100%;
+            margin-bottom: 5px;
+            border-radius: 5px;
+
+        }
+
+        p {
+            font-size: 15px;
+            color: #000000;
+            margin-bottom: 10px; /* Espacio entre párrafos (opcional) */
+        }
+    }
+}
+
+.red{
+    width: 90%;
+    height:80%;
+    background-color: rgb(205, 155, 97);
+    border-radius: 0; /* Para esquinas sin bordes */
+
+}
+
+.violeta{
+    width: 90%;
+    height:80%;
+    background-color: rgb(129, 11, 133);
+    border-radius: 0; /* Para esquinas sin bordes */
+
+}
+
+h2{
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    color: #6c0b8a;
+    padding: 5px;
+    text-shadow: -4px 2px 10px #ABB8C3;
+}
+.smaller-title {
+    font-size: 20px;
+}
+.fancy {
+    --b: 6px;   /* control the border thickness */
+    --w: 80px;  /* control the width of the line*/
+    --g: 15px;  /* control the gap */
+    --c: #0B486B;
+    width: fit-content;
+    padding: 0 1em;
+    line-height: 1.6em;
+    border: 1px solid;
+    color: #fff;
+    background: 
+    conic-gradient(from   45deg at left ,var(--c) 25%,#0000 0) 0,
+    conic-gradient(from -135deg at right,var(--c) 25%,#0000 0) 100%;
+    background-size: 51% 100%;
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    border-image: 
+    linear-gradient(
+        #0000      calc(50% - var(--b)/2),
+        var(--c) 0 calc(50% + var(--b)/2),
+        #0000    0) 
+    1/0 var(--w)/calc(var(--w) + var(--g));
+    margin-inline: auto;
+}
+
+.card {
+    overflow: hidden;
+    position: relative;
+    background-color: #ffffff;
+    text-align: left;
+    border-radius: 0.5rem;
+    max-width: 90%;
+    max-height: 100%;
+    box-shadow: 0 20px 25px -5px #803f80, 0 10px 10px -5px #803f80;
+    margin: auto; /* Centra horizontalmente la tarjeta */
+}
+
+
+.header {
+    padding: 1.25rem 1rem 1rem 1rem;
+    background-color: #ffffff;
+}
+.content {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.title {
+    color: #0a0606;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+    .message {
+    margin-top: 0.5rem;
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.25rem;
+    text-align: left;
+}
+
+    .actions {
+    margin: 0.75rem 1rem;
+    background-color: #F9FAFB;
+}
+
+    .desactivate {
+        display: inline-flex;
+        margin-top: 0.75rem;
+        padding: 0.5rem 1rem;
+        background-color: #ffffff;
+        color: #000000;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        justify-content: center;
+        width: 50%;
+        border-radius: 0.375rem;
+        border: 1px solid #025123;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.desactivate2 {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #ad1aa6;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #bd47a3;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.cancel {
+    display: inline-flex;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1rem;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    justify-content: center;
+    width: 50%;
+    border-radius: 0.375rem;
+    border: 1px solid #153d7a;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.centered-content {
+    text-align: center;
+    border: 1px solid #ccc; /* Borde sólido de 1 píxel de grosor y color gris claro */
+    padding: 20px; /* Relleno de 20 píxeles alrededor del contenido */
+    max-width: 600px; /* Ancho máximo del div para centrarlo en la página */
+    margin: 0 auto; /* Margen automático a los lados para centrarlo horizontalmente */
+}

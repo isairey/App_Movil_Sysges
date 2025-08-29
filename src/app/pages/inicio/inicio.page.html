@@ -1,0 +1,110 @@
+<ion-content [fullscreen]="true" class="ion-padding" color="secondary">
+  <div class="ion-align-items-center ion-justify-content-center">
+    <ion-grid fixed *ngIf="!mostrarRegistro">
+      <ion-row class="ion-text-center">
+        <ion-col size="12">
+          <img src="../../../assets/_con.png" id="logo" />
+          <img src="../../../assets/GES.png" id="logo" />
+        </ion-col>
+        <ion-col size="12">
+          <ion-item color="transparent">
+            <ion-input
+              class="whiteInput"
+              type="email"
+              fill="clear"
+              [(ngModel)]="credenciales.correo"
+              [clearInput]="true"
+              label="Correo"
+              labelPlacement="floating"
+            ></ion-input>
+          </ion-item>
+          <ion-item color="transparent">
+            <ion-input
+            class="whiteInput"
+            [type]="passwordType"
+            fill="clear"
+            labelPlacement="floating"
+            label="Contraseña"
+            [(ngModel)]="credenciales.password"
+            ></ion-input>
+            <ion-button fill="clear" slot="end" (click)="verContrasena()" color="light">
+              <ion-icon [name]="passwordToggleIcon"></ion-icon>
+            </ion-button>
+          </ion-item>
+          <br>
+          <ion-button shape="round" (click)="login()" color="light">
+            Iniciar
+          </ion-button>
+          <br>
+          <ion-label color="light" (click)="toggleRegistrationForm()">
+            Crear una cuenta
+          </ion-label>
+          <br>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+  <!-- Formulario de registro -->
+  <ion-grid *ngIf="mostrarRegistro">
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <img src="../../../assets/_con.png" id="logo" />
+        <img src="../../../assets/GES.png" id="logo" />
+      </ion-col>
+      <ion-col size="12">
+        <ion-item color="transparent">
+          <ion-input
+            class="whiteInput"
+            type="email"
+            label="Correo"
+            labelPlacement="floating"
+            [(ngModel)]="credenciales.correo"
+            [clearInput]="true"
+            [clearInput]="true"
+          ></ion-input>
+        </ion-item>
+        <ion-item color="transparent">
+          <ion-input
+            class="whiteInput"
+            [type]="passwordType"
+            label="Contraseña"
+            labelPlacement="floating"
+            [(ngModel)]="credenciales.password"
+          ></ion-input>
+          <ion-button fill="clear" slot="end" (click)="verContrasena()" color="light">
+            <ion-icon [name]="passwordToggleIcon"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <ion-item color="transparent">
+          <ion-input
+            class="whiteInput"
+            [type]="passwordType"
+            label="Confirmar contraseña"
+            labelPlacement="floating"
+            [(ngModel)]="credenciales.password2"
+          ></ion-input>
+          <ion-button fill="clear" slot="end" (click)="verContrasena()" color="light">
+            <ion-icon [name]="passwordToggleIcon"></ion-icon>
+          </ion-button>
+        </ion-item>
+        <br />
+        <ion-button shape="round" (click)="registro()" color="light">
+          Registrarse
+        </ion-button>
+        <br>
+        <ion-label color="light" (click)="toggleRegistrationForm()">
+          Ya tengo una cuenta
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="divisor"></div>
+ 
+  <div class="ion-text-center">
+    <ion-button (click)="ingresarInvitado()" expand="in-block" fill="outline" color="light">
+      Ingresa como visitante
+    </ion-button>
+  </div>
+</ion-content>

@@ -1,0 +1,65 @@
+.cards {
+  border-radius: 20px !important;
+  box-shadow: -4px -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.titulo {
+  font-size: 14px;
+}
+
+.img {
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+p {
+  font-size: 18px;
+}
+
+h1 {
+  color: red;
+}
+
+.termocontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300px;
+  width: 100%;
+  background-color: white;
+  position: relative;
+}
+
+.termometro {
+  border-radius: 50px;
+  border: 2px solid #000;
+  width: 100%;
+  height: 20px;
+}
+
+.labels-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.label {
+  font-size: 12px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  text-align: center;
+  padding: 2px 0;
+}
+
+.custom-button {
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --background: linear-gradient(to right, #8e3a8d, #b96cae);
+  --color: #fff;
+  --border-radius: 50px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: bold;
+}

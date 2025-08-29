@@ -1,0 +1,617 @@
+<ion-header>
+  <ion-toolbar color="secondary" class="ion-text-center">
+    <ion-title color="light">TEST DE VIOLENCIA</ion-title>
+    <ion-buttons slot="end" (click)="closeModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card class="ion-text-center cards" *ngIf="netService.isInvited === true || netService.isConnected === false">
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="12">
+            <h2>Debes registrarte para acceder a las dinámicas interactivas de la aplicación</h2>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button (click)="registrarme()" expand="in-block" fill="clear" shape="round">
+              Ir al registro
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+  <div *ngIf="netService.isInvited === false">
+<!-- Pregunta 1 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 1">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han hecho bromas hirientes que te hacen sentir mal?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 2 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 2">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han ignorado o dejado de hablar sin razón?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 3 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 3">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han celado de manera excesiva?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 4 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 4">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han ridiculizado o humillado en público?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 5 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 5">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han amenazado con consecuencias si no haces algo?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 6 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 6">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Han intentado controlar tus actividades o decisiones?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 7 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 7">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te has sentido empujado, golpeado o dado patadas?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 8 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 8">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te has sentido encerrado o aislado contra tu voluntad?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 9 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 9">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te has sentido amenazado con objetos o armas?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 10 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 10">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Has sido víctima de abuso sexual o violación?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 11 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 11">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Te han forzado a tener una relación sexual?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+<!-- Pregunta 12 -->
+<ion-card class="ion-text-center cards" *ngIf="step === 12">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-progress-bar [value]="progress"></ion-progress-bar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <h2>¿Has sentido temor por tu vida debido a amenazas de asesinato?</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="danger" (click)="aumentarSi()">
+            SI
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button expand="in-block" fill="outline" color="success" (click)="aumentarNo()">
+            NO
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+<ion-card *ngIf="step == 13" class="ion-text-center cards">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6" class="ion-padding">
+        <ion-title class="titulo" color="success">TOTAL SI</ion-title>
+        <ion-chip color="success" mode="ios" outline="true">
+          <ion-label>{{si}}</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="6" class="ion-padding">
+        <ion-title class="titulo" color="danger">TOTAL NO</ion-title>
+        <ion-chip color="danger" mode="ios" outline="true">
+          <ion-label>{{no}}</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="res === 1" class="ion-text-center ion-padding">
+      <ion-col size="12">
+        <h1>¡TEN CUIDADO!</h1>
+        <h3>LA VIOLENCIA AUMENTARÁ</h3>
+        <div class="termocontainer">
+          <div class="labels-container">
+            <div class="label" color="warning">Bromas hirientes</div>
+            <div class="label" color="warning">Ignorar / Ley del hielo</div>
+            <div class="label" color="warning">Celaos excesivos</div>
+            <div class="label">Ridiculizar/Humillar</div>
+            <div class="label">Amenazas</div>
+            <div class="label">Control/Prohibición</div>
+            <div class="label">Golpes/Empujones/Patadas</div>
+            <div class="label">Encerrar/Aislar</div>
+            <div class="label">Amenazar con armas</div>
+            <div class="label">Forzar una relación sexual</div>
+            <div class="label">Violación</div>
+            <div class="label">Temor por tu vida</div>
+          </div>
+          <ion-progress-bar class="termometro" [value]="violencia" [ngStyle]="{'--progress-background': progressBarColor}"></ion-progress-bar>
+          <div class="labels-container">
+            <div class="label">0</div>
+            <div class="label">1</div>
+            <div class="label">2</div>
+            <div class="label">3</div>
+            <div class="label">4</div>
+            <div class="label">5</div>
+            <div class="label">6</div>
+            <div class="label">7</div>
+            <div class="label">8</div>
+            <div class="label">9</div>
+            <div class="label">10</div>
+            <div class="label">11</div>
+            <div class="label">12</div>
+          </div>
+        </div>
+
+        <h1>Líneas de ayuda</h1>
+        <a href="https://wa.me/529512722665">
+          <ion-item>
+            <ion-icon slot="start" name="logo-whatsapp" color="tertiary"></ion-icon>(+52) (951) 272 26 65
+          </ion-item>
+        </a>
+
+        <a href="tel:911">
+          <ion-item>
+            <ion-icon slot="start" name="call-outline" color="tertiary"></ion-icon>(+52) 951 516 6810
+          </ion-item>
+         </a>
+
+        <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+          Guardar resultado
+        </ion-button>
+        <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="res === 0" class="ion-text-center ion-padding">
+      <ion-col size="12">
+        <h1>¡EXCELENTE!</h1>
+        <h3>NO HAS EXPERIMENTADO SITUACIONES DE VIOLENCIA</h3>
+        <div class="termocontainer">
+          <div class="labels-container">
+            <div class="label" color="warning">Bromas hirientes</div>
+            <div class="label" color="warning">Ignorar / Ley del hielo</div>
+            <div class="label" color="warning">Celaos excesivos</div>
+            <div class="label">Ridiculizar/Humillar</div>
+            <div class="label">Amenazas</div>
+            <div class="label">Control/Prohibición</div>
+            <div class="label">Golpes/Empujones/Patadas</div>
+            <div class="label">Encerrar/Aislar</div>
+            <div class="label">Amenazar con armas</div>
+            <div class="label">Forzar una relación sexual</div>
+            <div class="label">Violación</div>
+            <div class="label">Temor por tu vida</div>
+          </div>
+          <ion-progress-bar class="termometro" [value]="violencia" [ngStyle]="{'--progress-background': progressBarColor}"></ion-progress-bar>
+          <div class="labels-container">
+            <div class="label">0</div>
+            <div class="label">1</div>
+            <div class="label">2</div>
+            <div class="label">3</div>
+            <div class="label">4</div>
+            <div class="label">5</div>
+            <div class="label">6</div>
+            <div class="label">7</div>
+            <div class="label">8</div>
+            <div class="label">9</div>
+            <div class="label">10</div>
+            <div class="label">11</div>
+            <div class="label">12</div>
+          </div>
+        </div>
+
+        <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+          Guardar resultado
+        </ion-button>
+        <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="res === 2" class="ion-text-center ion-padding">
+      <ion-col size="12">
+        <h1>¡BUSCA AYUDA!</h1>
+        <div class="termocontainer">
+          <div class="labels-container">
+            <div class="label">Bromas hirientes</div>
+            <div class="label">Ignorar / Ley del hielo</div>
+            <div class="label">Celaos excesivos</div>
+            <div class="label">Ridiculizar/Humillar</div>
+            <div class="label">Amenazas</div>
+            <div class="label">Control/Prohibición</div>
+            <div class="label">Golpes/Empujones/Patadas</div>
+            <div class="label">Encerrar/Aislar</div>
+            <div class="label">Amenazar con armas</div>
+            <div class="label">Forzar una relación sexual</div>
+            <div class="label">Violación</div>
+            <div class="label">Temor por tu vida</div>
+          </div>
+          <ion-progress-bar class="termometro" [value]="violencia" [ngStyle]="{'--progress-background': progressBarColor}"></ion-progress-bar>
+          <div class="labels-container">
+            <div class="label">0</div>
+            <div class="label">1</div>
+            <div class="label">2</div>
+            <div class="label">3</div>
+            <div class="label">4</div>
+            <div class="label">5</div>
+            <div class="label">6</div>
+            <div class="label">7</div>
+            <div class="label">8</div>
+            <div class="label">9</div>
+            <div class="label">10</div>
+            <div class="label">11</div>
+            <div class="label">12</div>
+          </div>
+        </div>
+
+        <h1>Líneas de ayuda</h1>
+        <a href="https://wa.me/529512722665">
+          <ion-item>
+            <ion-icon slot="start" name="logo-whatsapp" color="tertiary"></ion-icon>(+52) (951) 272 26 65
+          </ion-item>
+        </a>
+
+        <a href="tel:911">
+          <ion-item>
+            <ion-icon slot="start" name="call-outline" color="tertiary"></ion-icon>(+52) 951 516 6810
+          </ion-item>
+         </a>
+
+        <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+          Guardar resultado
+        </ion-button>
+        <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="res === 3" class="ion-text-center ion-padding">
+      <ion-col size="12">
+        <h1>¡REACCIONA!</h1>
+        <div class="termocontainer">
+          <div class="labels-container">
+            <div class="label">Bromas hirientes</div>
+            <div class="label">Ignorar / Ley del hielo</div>
+            <div class="label">Celaos excesivos</div>
+            <div class="label">Ridiculizar/Humillar</div>
+            <div class="label">Amenazas</div>
+            <div class="label">Control/Prohibición</div>
+            <div class="label">Golpes/Empujones/Patadas</div>
+            <div class="label">Encerrar/Aislar</div>
+            <div class="label">Amenazar con armas</div>
+            <div class="label">Forzar una relación sexual</div>
+            <div class="label">Violación</div>
+            <div class="label">Temor por tu vida</div>
+          </div>
+          <ion-progress-bar class="termometro" [value]="violencia" [ngStyle]="{'--progress-background': progressBarColor}"></ion-progress-bar>
+          <div class="labels-container">
+            <div class="label">0</div>
+            <div class="label">1</div>
+            <div class="label">2</div>
+            <div class="label">3</div>
+            <div class="label">4</div>
+            <div class="label">5</div>
+            <div class="label">6</div>
+            <div class="label">7</div>
+            <div class="label">8</div>
+            <div class="label">9</div>
+            <div class="label">10</div>
+            <div class="label">11</div>
+            <div class="label">12</div>
+          </div>
+        </div>
+        <h1>ES URGENTE DETENER ESTA SITUACIÓN</h1>
+
+        <h1>Líneas de ayuda</h1>
+        <a href="https://wa.me/529512722665">
+          <ion-item>
+            <ion-icon slot="start" name="logo-whatsapp" color="tertiary"></ion-icon>(+52) (951) 272 26 65
+          </ion-item>
+        </a>
+
+        <a href="tel:911">
+          <ion-item>
+            <ion-icon slot="start" name="call-outline" color="tertiary"></ion-icon>(+52) 951 516 6810
+          </ion-item>
+         </a>
+         
+        <ion-button expand="in-block" fill="outline" color="secondary" (click)="guardarResultado()" *ngIf="netService.isConnected">
+          Guardar resultado
+        </ion-button>
+        <ion-label *ngIf="!netService.isConnected" color="danger">Accede a internet para registrar tus datos</ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card>
+  </div>
+
+  
+</ion-content>

@@ -1,0 +1,316 @@
+.custom-background {
+  --background: #ffffff; /* Cambia el color a tu preferencia */
+}
+
+
+.titulo1 {
+  color: #4f4ea0;
+}
+
+.titulo2 {
+  color: #108386;
+}
+
+.titulo3 {
+  color: #ABB8C3;
+}
+
+.titulo4 {
+  color:  #FF7F50;
+}
+
+.titulo5 {
+  color:  #6A5ACD;
+}
+
+.titulo6 {
+  color:  #FF69B4;
+}
+
+.titulo7 {
+  color:  #20B2AA;
+}
+
+.titulo8 {
+  color:  #FFA07A;
+}
+
+.titulo9 {
+  color:  #DAA520;
+}
+
+.titulo10 {
+  color:  #87CEFA;
+}
+
+.titulo11 {
+  color:  #FF4500;
+}
+
+.titulo12 {
+  color:  #8A2BE2;
+}
+
+.titulo13 {
+  color: #FF69B4
+}
+
+.swiper-pagination-bullet {
+  background: #4f4ea0; /* Color de los bullets de paginación */
+}
+
+.swiper-pagination-container {
+  position: absolute;
+  bottom: 10px;  /* Ajusta según sea necesario */
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.swiper-container, .cards1 {
+  position: relative;
+}
+
+.cardsContent {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+
+}
+.cardsContenttres {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+
+}
+.cardsContent11 {
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+.cards1 {
+  border-radius: 10px;
+  box-shadow: -4px 8px 10px rgba(0, 0, 0, 0.1); /* Horizontal | Vertical | Desenfoque | Color */
+}
+
+.my-custom-class {
+  --min-width: 200px;
+  --max-width: 300px;
+}
+
+.cards1 img {
+  border-radius: 10px;
+  
+}
+
+.card-title-overlay {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  color: black; /* Color del texto del título */
+  padding: 10px; /* Espacio interior del título */
+  border-top-left-radius: 10px; /* Redondea la esquina superior izquierda */
+  border-top-right-radius: 10px; /* Redondea la esquina superior derecha */
+  z-index: 1; /* Asegura que el título esté sobre la imagen */
+  font-size: 25px;
+  font-weight: bold; /* Cambiado de font-style a font-weight */
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Borde pequeño negro alrededor del texto */
+}
+.card-title-overlayblanco {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  color: rgb(255, 255, 255); /* Color del texto del título */
+  padding: 10px; /* Espacio interior del título */
+  border-top-left-radius: 10px; /* Redondea la esquina superior izquierda */
+  border-top-right-radius: 10px; /* Redondea la esquina superior derecha */
+  z-index: 1; /* Asegura que el título esté sobre la imagen */
+  font-size: 25px;
+  font-weight: bold; /* Cambiado de font-style a font-weight */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Borde pequeño negro alrededor del texto */
+}
+
+
+
+.swiperCard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.swiper-slide-active .cards1 {
+  transform: rotate(0deg); /* Alinear la tarjeta activa */
+}
+
+.card {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  border-radius: 10px;
+  border: 1px solid rgba(182, 80, 225, 0.2);
+  transition: all .2s;
+  box-shadow: 12px 12px 2px 1px rgba(94, 24, 175, 0.2);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+.carduno {
+  cursor: pointer; /* Cambia el cursor a una mano al pasar sobre el elemento, indicando que es clicable. */
+  width: 300px; /* Establece el ancho del elemento a 300 píxeles. */
+  height: 550px; /* Establece la altura del elemento a 550 píxeles. */
+  justify-content: center; /* Alinea el contenido del elemento horizontalmente en el centro. Nota: Esto solo funciona si el elemento es un contenedor flexible (flex container). */
+  background: #abaaee; /* Establece el color de fondo del elemento a un tono de púrpura claro. */
+  border-radius: 10px; /* Redondea las esquinas del elemento con un radio de 10 píxeles. */
+  border: 1px solid rgba(234, 212, 212, 0.2); /* Aplica un borde sólido de 1 píxel de grosor con un color rosado muy claro y semi-transparente (opacidad del 20%). */
+  transition: all .2s; /* Aplica una transición suave de 0.2 segundos a todas las propiedades del elemento que cambian. */
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3); /* Añade una sombra difusa alrededor del elemento con un desenfoque de 15 píxeles y un color negro semi-transparente (opacidad del 30%). */
+  top: 30%; /* Posiciona el elemento a un 30% desde la parte superior del contenedor. Nota: Esto requiere que el elemento tenga un posicionamiento relativo, absoluto o fijo. */
+  left: 30%; /* Posiciona el elemento a un 30% desde la parte izquierda del contenedor. Nota: Esto requiere que el elemento tenga un posicionamiento relativo, absoluto o fijo. */
+  transform: translate(-30%, -30%); /* Mueve el elemento un 30% hacia arriba y hacia la izquierda desde su posición actual. Esto se usa para centrar el elemento dentro de su contenedor. */
+}
+
+
+.carddos {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background: #108386;
+  border-radius: 10px;
+  border: 1px solid #95c9cb;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+
+.cardtres {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background: #ABB8C3;
+  border-radius: 10px;
+  border: 1px solid #8d8d8d;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+
+
+.cardcuatro {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:    #f6b92a;
+  border-radius: 10px;
+  border: 1px solid #fde6b1;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+
+.cardcinco {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:  #786ad3;
+  border-radius: 10px;
+  border: 1px solid #6756d6;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+.cardseis {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:  #f997c8;
+  border-radius: 10px;
+  border: 1px solid #e95ba2;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+//se ocupo la misma clase para las cards 2 y 7
+// se ocupo la misma clase para la card 4 y 8 
+
+.cardnueve {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:  #ffc941;
+  border-radius: 10px;
+  border: 1px solid #eabe4f;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+
+.carddiez {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:   #85cdf9;
+  border-radius: 10px;
+  border: 1px solid #c4e4f7;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+
+.cardonce {
+  cursor: pointer;
+  width: 300px;
+  height: 550px;
+  justify-content: center;
+  background:   #e97b53;
+  border-radius: 10px;
+  border: 1px solid #e8835e;
+  transition: all .2s;
+  box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, 0.3);
+  top: 30%;
+  left: 30%;
+  transform: translate(-30%, -30%);
+}
+//se ocupo la misma clase para los pasos 5 y 12
+//se ocupo la misma clase para los pasos 6 y 13
+.card:hover {
+  box-shadow: -12px 12px 2px -1px rgba(94, 24, 175, 0.2);
+}
+.scrollable-content {
+  max-height: 300px; /* Altura máxima para activar el scroll */
+  overflow-y: auto; /* Habilitar scroll vertical si el contenido excede la altura */
+}

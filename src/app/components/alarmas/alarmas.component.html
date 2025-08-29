@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" color="light">CONFIGURAR ALARMAS</ion-title>
+    <ion-buttons slot="end" (click)="closeModal()">
+      <ion-button>
+        <ion-icon slot="icon-only" name="close" color="light"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-grid fixed>
+        <ion-row class="ion-text-center">
+          <ion-col size="12">
+            <h2>Selecciona una hora</h2>
+          </ion-col>
+        </ion-row>
+
+        
+        <ion-row>
+          <ion-col size="12">
+            <ion-datetime 
+              display-format="HH:mm" 
+              picker-format="HH:mm"
+              presentation="time" 
+              (ionChange)="onTimeChange($event)">
+            </ion-datetime>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="ion-text-center">
+          <ion-col size="12">
+            <ion-button expand="in-block" (click)="fijarAlarma()">
+              Fijar alarma
+            </ion-button>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

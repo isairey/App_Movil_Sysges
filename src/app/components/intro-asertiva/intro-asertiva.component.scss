@@ -1,0 +1,16 @@
+.imgContainer{
+    align-items: center !important;
+    max-width: 100%;
+    max-height: 20%;
+    margin-left: 30%;
+}
+.custom-button {
+    --padding-start: 20px;
+    --padding-end: 20px;
+    --background: linear-gradient(to right, #8e3a8d, #b96cae);
+    --color: #fff;
+    --border-radius: 50px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    font-weight: bold;
+}

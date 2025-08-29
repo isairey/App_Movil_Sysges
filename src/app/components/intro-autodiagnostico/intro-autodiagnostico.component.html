@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" color="light">Introducción al autocuidado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+
+
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <h2><strong>PRIMERA SECCIÓN: AUTOCUIDADO</strong></h2>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="ion-text-justify">
+      <ion-col size="12">
+        <p>Este mini test te permitirá tomar
+          conciencia de cómo es tu
+          autocuidado y tu nivel de bienestar. En tan solo unos minutos, tendrás la respuesta. Lee
+          bien las preguntas, sé honesta y
+          descubre cuánto te cuidas a ti misma.</p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="imgContainer">
+      <ion-col size="6" class="ion-align-items-center">
+        <img src="../../../assets/Defensora 04.png" alt="">
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row class="ion-text-justify">
+      <ion-col size="12">
+        <p>Te invitamos a realizar el test para descubrir tu nivel de autocuidado, así como a descargar los recursos adicionales acerca de este tema.
+          <a (click)="abrirRecursos()"> Ver recursos</a>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="imgContainer">
+      <ion-col size="6" class="ion-align-items-center">
+        <img src="../../../assets/Defensora 07.png" alt="">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" class="ion-text-center">
+        <ion-button class="custom-button" (click)="closeModal()" expand="block" fill="clear" shape="round">
+          <ion-icon slot="end" name="arrow-forward-circle-outline"></ion-icon>
+          Iniciar test
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<img src="../../../assets/Defensora 05.png" alt="">

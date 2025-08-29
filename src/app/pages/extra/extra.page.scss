@@ -1,0 +1,14 @@
+.imagen{
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;    
+}
+
+.imagen img{
+    height: 100% !important;
+    width: 50% !important;
+    border-radius: 50% !important;
+    border: solid 1px !important;
+}
