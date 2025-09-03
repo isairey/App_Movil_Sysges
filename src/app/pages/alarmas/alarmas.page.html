@@ -1,0 +1,32 @@
+<!--<ion-header>
+  <ion-toolbar>
+    <ion-title>Alarmas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-button expand="full" (click)="probarAlarma()">Probar Alarma</ion-button>
+  <ion-button expand="full" color="secondary" (click)="programarNotificacion()">Programar Notificación de Prueba</ion-button>
+</ion-content>
+-->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Alarmas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label>Selecciona la hora</ion-label>
+    <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="horaAlarma"></ion-datetime>
+  </ion-item>
+
+  <ion-button expand="full" (click)="programarAlarma()">
+    Programar alarma
+  </ion-button>
+
+  <ion-button expand="full" color="danger" (click)="desactivarAlarmas()">
+    Desactivar todas las alarmas
+  </ion-button>
+</ion-content>

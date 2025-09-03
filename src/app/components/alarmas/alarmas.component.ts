@@ -1,6 +1,11 @@
 import { Component, MissingTranslationStrategy, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { LocalNotifications, LocalNotificationActionPerformed, LocalNotification} from '@capacitor/local-notifications';
+import {
+  LocalNotifications,
+  LocalNotificationSchema,
+  ActionPerformed,
+  PendingLocalNotificationSchema
+} from '@capacitor/local-notifications';
 import { ToastController } from '@ionic/angular';
 
 @Component({
@@ -77,11 +82,11 @@ export class AlarmasComponent  implements OnInit {
   }
 
   setupNotificationListeners() {
-    LocalNotifications.addListener('localNotificationReceived', (notification: LocalNotification) => {
+    LocalNotifications.addListener('localNotificationReceived', (notification: LocalNotificationSchema) => {
       this.alarma.play();
     });
 
-    LocalNotifications.addListener('localNotificationActionPerformed', (notification: LocalNotificationActionPerformed) => {
+    LocalNotifications.addListener('localNotificationActionPerformed', (notification: ActionPerformed) => {
       this.alarma.play();
     });
   }

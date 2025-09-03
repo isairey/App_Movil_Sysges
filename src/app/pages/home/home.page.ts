@@ -21,6 +21,7 @@ export class HomePage implements OnInit {
     { title: 'Recursos', url: '/recursos', icon: 'folder-open', descripcion: 'Página de recursos completos para descargar' },
     { title: 'Créditos', url: '/creditos', icon: 'information-circle', descripcion: 'Créditos y contactos' },
     { title: 'Ayúdanos a crecer', url: '/extra', icon: 'id-card', descripcion: 'Aquí puedes agregar información adicional para ayudarnos a mejorar' },
+    { title: 'Alarma', url: '/alarmas', icon: 'alarm', descripcion: 'Alarmas' },
   ];
 
 
