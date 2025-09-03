@@ -14,7 +14,16 @@ export class AlarmasPage {
   // Programar alarma a la hora seleccionada
   async programarAlarma() {
     if (!this.horaAlarma) {
-      alert('Selecciona una hora primero.');
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            id: new Date().getTime(),
+            title: 'Error',
+            body: 'Selecciona una hora primero.',
+            sound: 'default'
+          }
+        ]
+      });
       return;
     }
 
@@ -33,26 +42,33 @@ export class AlarmasPage {
         {
           id: new Date().getTime(), // id único
           title: 'Alarma programada',
-          body: '¡Es hora de tu recordatorio!',
+          body: `Tu alarma sonará a las ${this.horaAlarma}`,
           schedule: { at: fechaAlarma },
           sound: 'default'
         }
       ]
     });
-
-    alert(`Alarma programada a las ${this.horaAlarma}`);
   }
 
   // Desactivar todas las alarmas programadas
   async desactivarAlarmas() {
-    // Obtiene todas las notificaciones pendientes
     const pendientes = await LocalNotifications.getPending();
     const ids = pendientes.notifications.map(n => ({ id: n.id }));
 
     if (ids.length > 0) {
       await LocalNotifications.cancel({ notifications: ids });
-    }
 
-    alert('Todas las alarmas han sido desactivadas.');
+      // Mostrar notificación de confirmación
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            id: new Date().getTime(),
+            title: 'Alarmas desactivadas',
+            body: 'Se cancelaron todas las alarmas programadas.',
+            sound: 'default'
+          }
+        ]
+      });
+    }
   }
 }
