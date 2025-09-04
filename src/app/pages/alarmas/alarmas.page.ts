@@ -21,6 +21,8 @@ export class AlarmasPage implements OnInit {
   constructor() {}
 
   ngOnInit() {
+
+    this.programarRecordatorios();
     // Cargar alarmas guardadas
     const guardadas = localStorage.getItem('alarmas');
     this.alarmas = guardadas ? JSON.parse(guardadas) : [];
@@ -117,4 +119,46 @@ export class AlarmasPage implements OnInit {
   guardarAlarmas() {
     localStorage.setItem('alarmas', JSON.stringify(this.alarmas));
   }
+
+
+
+async programarRecordatorios() {
+  const recordatorios = [
+    { hora: '09:00', mensaje: '💧 Bebe un vaso de agua para mantenerte hidratado.' },
+    { hora: '12:00', mensaje: '🍎 Toma una fruta o snack saludable.' },
+    { hora: '15:00', mensaje: '🚶 Da un pequeño paseo o estírate.' },
+    { hora: '22:00', mensaje: '😴 Hora de relajarte y preparar tu descanso.' },
+  ];
+
+  for (let r of recordatorios) {
+    const [hh, mm] = r.hora.split(':').map(Number);
+    const fecha = new Date();
+    fecha.setHours(hh, mm, 0, 0);
+
+    // Si ya pasó, lo programamos para mañana
+    const ahora = new Date();
+    if (fecha <= ahora) {
+      fecha.setDate(fecha.getDate() + 1);
+    }
+
+    await LocalNotifications.schedule({
+      notifications: [
+        {
+          id: new Date().getTime(),
+          title: 'Recordatorio de autocuidado',
+          body: r.mensaje,
+          schedule: { at: fecha, repeats: true }, // 🔁 se repite diario
+          sound: 'default',
+        },
+      ],
+    });
+  }
+
+  console.log('Recordatorios de autocuidado programados');
 }
+
+
+
+}
+
+
