@@ -1,58 +1,120 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { Haptics, ImpactStyle } from '@capacitor/haptics';
+
+interface Alarma {
+  hora: string;
+  dias: number[]; // 1=Lunes, 2=Martes, ... 7=Domingo
+  activa: boolean;
+}
 
 @Component({
   selector: 'app-alarmas',
   templateUrl: './alarmas.page.html',
   styleUrls: ['./alarmas.page.scss'],
 })
-export class AlarmasPage {
-  horaAlarma: string = ''; // inicializamos con string vacío
+export class AlarmasPage implements OnInit {
+  alarmas: Alarma[] = [];
+  horaSeleccionada: string = '08:00';
+  diasSeleccionados: number[] = [];
 
   constructor() {}
 
-  // Programar alarma a la hora seleccionada
-  async programarAlarma() {
-    if (!this.horaAlarma) {
-      alert('Selecciona una hora primero.');
-      return;
-    }
+  ngOnInit() {
+    // Cargar alarmas guardadas
+    const guardadas = localStorage.getItem('alarmas');
+    this.alarmas = guardadas ? JSON.parse(guardadas) : [];
 
-    const [hora, minuto] = this.horaAlarma.split(':').map(Number);
-    const ahora = new Date();
-    const fechaAlarma = new Date();
-    fechaAlarma.setHours(hora, minuto, 0, 0);
-
-    // Si la hora seleccionada ya pasó hoy, programarla para mañana
-    if (fechaAlarma <= ahora) {
-      fechaAlarma.setDate(fechaAlarma.getDate() + 1);
-    }
-
-    await LocalNotifications.schedule({
-      notifications: [
-        {
-          id: new Date().getTime(), // id único
-          title: 'Alarma programada',
-          body: '¡Es hora de tu recordatorio!',
-          schedule: { at: fechaAlarma },
-          sound: 'default'
+    // Listener de notificaciones
+    LocalNotifications.addListener(
+      'localNotificationActionPerformed',
+      (notification) => {
+        if (notification.actionId === 'APAGAR') {
+          this.apagarAlarma(notification.notification.id);
         }
-      ]
-    });
-
-    alert(`Alarma programada a las ${this.horaAlarma}`);
+      }
+    );
   }
 
-  // Desactivar todas las alarmas programadas
-  async desactivarAlarmas() {
-    // Obtiene todas las notificaciones pendientes
-    const pendientes = await LocalNotifications.getPending();
-    const ids = pendientes.notifications.map(n => ({ id: n.id }));
+  agregarAlarma() {
+    const nuevaAlarma: Alarma = {
+      hora: this.horaSeleccionada,
+      dias: [...this.diasSeleccionados],
+      activa: true,
+    };
 
-    if (ids.length > 0) {
-      await LocalNotifications.cancel({ notifications: ids });
+    this.alarmas.push(nuevaAlarma);
+    this.guardarAlarmas();
+    this.programarNotificaciones(nuevaAlarma);
+  }
+
+  toggleAlarma(alarma: Alarma) {
+    alarma.activa = !alarma.activa;
+    this.guardarAlarmas();
+    if (alarma.activa) {
+      this.programarNotificaciones(alarma);
+    } else {
+      this.cancelarNotificaciones(alarma);
     }
+  }
 
-    alert('Todas las alarmas han sido desactivadas.');
+  toggleDia(dia: number) {
+    if (this.diasSeleccionados.includes(dia)) {
+      this.diasSeleccionados = this.diasSeleccionados.filter(x => x !== dia);
+    } else {
+      this.diasSeleccionados.push(dia);
+    }
+  }
+
+  getDiasTexto(dias: number[]): string {
+    if (!dias) return '';
+    const nombres = ['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+    return dias.map(d => nombres[d - 1]).join(', ');
+  }
+
+  async programarNotificaciones(alarma: Alarma) {
+    for (let dia of alarma.dias) {
+      const fecha = this.proximoDia(dia, alarma.hora);
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            title: '¡Alarma!',
+            body: 'Toca "Apagar" para detenerla',
+            id: new Date().getTime() + dia, // id único por día
+            schedule: { at: fecha },
+            sound: 'res://alarma.mp3',
+            actionTypeId: 'APAGAR',
+          },
+        ],
+      });
+    }
+  }
+
+  async apagarAlarma(id: number) {
+    await Haptics.impact({ style: ImpactStyle.Heavy });
+    await LocalNotifications.cancel({ notifications: [{ id }] });
+    console.log('Alarma apagada', id);
+  }
+
+  cancelarNotificaciones(alarma: Alarma) {
+    alarma.dias.forEach(async (dia) => {
+      // Nota: Esto puede duplicar ids si agregas la misma alarma varias veces.
+      await LocalNotifications.cancel({ notifications: [{ id: new Date().getTime() + dia }] });
+    });
+  }
+
+  proximoDia(dia: number, hora: string): Date {
+    const [hh, mm] = hora.split(':').map(Number);
+    const hoy = new Date();
+    const fecha = new Date();
+    fecha.setHours(hh, mm, 0, 0);
+    const diferencia = (dia + 7 - hoy.getDay()) % 7;
+    fecha.setDate(hoy.getDate() + (diferencia === 0 && fecha < hoy ? 7 : diferencia));
+    return fecha;
+  }
+
+  // Nueva función para guardar alarmas en localStorage
+  guardarAlarmas() {
+    localStorage.setItem('alarmas', JSON.stringify(this.alarmas));
   }
 }
