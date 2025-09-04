@@ -17,16 +17,45 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+
+  <!-- Selector de hora -->
   <ion-item>
-    <ion-label>Selecciona la hora</ion-label>
-    <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm" [(ngModel)]="horaAlarma"></ion-datetime>
+    <ion-label>Selecciona hora</ion-label>
+    <ion-datetime
+      presentation="time"
+      [(ngModel)]="horaSeleccionada">
+    </ion-datetime>
   </ion-item>
 
-  <ion-button expand="full" (click)="programarAlarma()">
-    Programar alarma
-  </ion-button>
+  <!-- Selector de días -->
+  <ion-list>
+   <ion-item>
+  <ion-label>Lunes</ion-label>
+  <ion-checkbox slot="end" (ionChange)="toggleDia(1)" [checked]="diasSeleccionados.includes(1)"></ion-checkbox>
+</ion-item>
 
-  <ion-button expand="full" color="danger" (click)="desactivarAlarmas()">
-    Desactivar todas las alarmas
-  </ion-button>
+<ion-item>
+  <ion-label>Martes</ion-label>
+  <ion-checkbox slot="end" (ionChange)="toggleDia(2)" [checked]="diasSeleccionados.includes(2)"></ion-checkbox>
+</ion-item>
+
+<ion-item>
+  <ion-label>Miércoles</ion-label>
+  <ion-checkbox slot="end" (ionChange)="toggleDia(3)" [checked]="diasSeleccionados.includes(3)"></ion-checkbox>
+</ion-item>
+  </ion-list>
+
+  <!-- Botón para guardar alarma -->
+  <ion-button expand="full" (click)="agregarAlarma()">Agregar alarma</ion-button>
+
+  <ion-list>
+    <ion-item *ngFor="let alarma of alarmas">
+      <ion-label>
+        {{ alarma.hora }} <br>
+        Días: {{ alarma.dias.join(', ') }}
+      </ion-label>
+      <ion-toggle [checked]="alarma.activa" (ionChange)="toggleAlarma(alarma)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
