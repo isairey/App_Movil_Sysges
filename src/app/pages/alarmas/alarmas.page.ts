@@ -156,9 +156,6 @@ async programarRecordatorios() {
 
   console.log('Recordatorios de autocuidado programados');
 }
-
-
-
 }
 
 

@@ -20,7 +20,6 @@ import firebase from 'firebase/compat/app';
 export class AppComponent {
   userMail: string | null = null;
   alarma: HTMLAudioElement;
-
   public appPages = [
     { title: 'Registrarme', url: '/inicio', icon: 'person-circle' },
     { title: 'Mi perfil', url: '/perfil', icon: 'person' },
@@ -37,7 +36,6 @@ export class AppComponent {
     { title: 'Ayúdanos a crecer', url: '/extra', icon: 'id-card' },
     { title: 'Alarma', url: '/alarmas', icon: 'alarm' }
   ];
-
   constructor(
     private auth: AngularFireAuth,
     private router: Router,

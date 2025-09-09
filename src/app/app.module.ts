@@ -14,9 +14,6 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 import { File } from '@awesome-cordova-plugins/file/ngx';
 import { FileTransfer } from '@awesome-cordova-plugins/file-transfer/ngx';
-
-
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
