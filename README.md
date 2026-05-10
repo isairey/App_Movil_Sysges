@@ -36,8 +36,8 @@ Incluye un sistema de **alarmas personalizadas** y **recordatorios de autocuidad
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/usuario/AppGESMujer.git
-   cd AppGESMujer
+   git clone https://github.com/isairey/App_Movil_Sysges.git
+   cd App_Movil_Sysges
 2. Instalar dependencias:
 
       ```bash
